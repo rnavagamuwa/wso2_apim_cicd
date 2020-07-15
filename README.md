@@ -1,4 +1,4 @@
-# CICD Pipleline for WSO2 API Manager
+# CICD Pipeline for WSO2 API Manager
 
 ## Overview
 
