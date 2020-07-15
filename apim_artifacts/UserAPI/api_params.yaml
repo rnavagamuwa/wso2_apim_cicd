@@ -1,0 +1,5 @@
+environments:
+  - name: default
+    endpoints:
+      production:
+      sandbox:

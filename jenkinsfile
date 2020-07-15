@@ -1,0 +1,54 @@
+pipeline {
+    triggers {
+       githubPush()
+    }
+    agent any
+    tools {nodejs "Node"}
+    environment {
+        CI = 'true'
+        CURR_DIR = pwd()
+        API_DIR = '/UserAPI'
+        DEV_ENV = 'dev'
+        PROD_ENV = 'prod'
+        TEST_SCRIPT_FILE = 'test_script.postman_collection.json'        
+    }
+    stages {
+        stage('Preparation') {
+            steps{
+                git branch: "master",
+                url: '<github_repo_url>',
+                credentialsId: 'amp-demo-github-cred'
+            }
+        }
+        stage('Deploy to UAT') {
+            environment{
+                RETRY = '80'
+            }
+            steps {
+                echo 'Logging into $DEV_ENV'
+                withCredentials([usernamePassword(credentialsId: 'dev_apim_admin', usernameVariable: 'DEV_USERNAME', passwordVariable: 'DEV_PASSWORD')]) {
+                    sh 'apictl login $DEV_ENV -u $DEV_USERNAME -p $DEV_PASSWORD -k'                        
+                }
+                echo 'Deploying to $DEV_ENV'
+                sh 'apictl import-api -f $CURR_DIR$API_DIR -e $DEV_ENV -k --preserve-provider --update --verbose'
+            }
+        }
+        stage('Run Tests') {
+            steps {
+                echo 'Running tests in $DEV_ENV'
+                sh 'newman run $CURR_DIR/$TEST_SCRIPT_FILE --insecure' 
+            }
+        }
+    }
+    post {
+        cleanup {
+            deleteDir()
+            dir("${workspace}@tmp") {
+                deleteDir()
+            }
+            dir("${workspace}@script") {
+                deleteDir()
+            }
+        }
+    }
+}
