@@ -1,5 +1,7 @@
 # WSO2 API Manager Project
 
+<img src="http://validator.swagger.io/validator?url=https://raw.githubusercontent.com/rnavagamuwa/wso2_apim_cicd/master/apim_artifacts/UserAPI/Meta-information/swagger.yaml">
+
 ## Project structure
 
 ```bash
