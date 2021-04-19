@@ -2,14 +2,13 @@ id:
   providerName: admin
   apiName: UserAPI
   version: v1
-  id: 0
-uuid: 94bd19e2-01c9-441e-b8e5-44c22aa074de
+uuid: f4fa432b-db38-42b7-a96a-67ca6a8fa37b
 type: HTTP
 context: /users/v1
 contextTemplate: /users/{version}
 tags: []
 documents: []
-lastUpdated: Apr 19, 2021 10:32:30 AM
+lastUpdated: Jul 13, 2020 1:13:17 PM
 availableTiers:
  -
   name: Bronze
@@ -21,8 +20,6 @@ availableTiers:
   timeUnit: min
   tierPlan: FREE
   stopOnQuotaReached: true
-  quotaPolicyType: requestCount
-  rateLimitCount: 0
  -
   name: Gold
   displayName: Gold
@@ -33,8 +30,6 @@ availableTiers:
   timeUnit: min
   tierPlan: FREE
   stopOnQuotaReached: true
-  quotaPolicyType: requestCount
-  rateLimitCount: 0
  -
   name: Silver
   displayName: Silver
@@ -45,8 +40,6 @@ availableTiers:
   timeUnit: min
   tierPlan: FREE
   stopOnQuotaReached: true
-  quotaPolicyType: requestCount
-  rateLimitCount: 0
  -
   name: Unlimited
   displayName: Unlimited
@@ -57,7 +50,6 @@ availableTiers:
   timeUnit: ms
   tierPlan: FREE
   stopOnQuotaReached: true
-  rateLimitCount: 0
 availableSubscriptionLevelPolicies: []
 uriTemplates: []
 apiHeaderChanged: false
@@ -88,7 +80,7 @@ corsConfiguration:
    - DELETE
    - PATCH
    - OPTIONS
-endpointConfig: '{"endpoint_type":"http","sandbox_endpoints":{"url":"http:\/\/localhost:8595\/api\/users"},"production_endpoints":{"url":"http:\/\/localhost:8595\/api\/users"}}'
+endpointConfig: '{"endpoint_type":"http","sandbox_endpoints":{"url":"http:\/\/3.19.209.74:8595\/api\/users"},"production_endpoints":{"url":"http:\/\/3.19.209.74:8595\/api\/users"}}'
 responseCache: Disabled
 cacheTimeout: 300
 implementation: ENDPOINT
@@ -96,11 +88,9 @@ authorizationHeader: Authorization
 scopes: []
 isDefaultVersion: false
 isPublishedDefaultVersion: false
-keyManagers:
- - all
 environments:
  - Production and Sandbox
-createdTime: "1618808547429"
+createdTime: "1594626117090"
 additionalProperties: {}
 monetizationProperties: {}
 isMonetizationEnabled: false
@@ -111,7 +101,6 @@ apiSecurity: oauth2,oauth_basic_auth_api_key_mandatory,api_key
 endpoints: []
 enableSchemaValidation: false
 apiCategories: []
-enableStore: true
 accessControl: all
 rating: 0.0
 isLatest: true
