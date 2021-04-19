@@ -57,7 +57,7 @@
 					}
 				},
 				"url": {
-					"raw": "https://{{baseUrl}}:9443/client-registration/v0.16/register",
+					"raw": "https://{{baseUrl}}:9443/client-registration/v0.17/register",
 					"protocol": "https",
 					"host": [
 						"{{baseUrl}}"
@@ -65,7 +65,7 @@
 					"port": "9443",
 					"path": [
 						"client-registration",
-						"v0.16",
+						"v0.17",
 						"register"
 					]
 				}
@@ -411,12 +411,12 @@
 					}
 				},
 				"url": {
-					"raw": "https://{{baseUrl}}:8243/users/v1/",
-					"protocol": "https",
+					"raw": "http://{{baseUrl}}:8280/users/v1/",
+					"protocol": "http",
 					"host": [
 						"{{baseUrl}}"
 					],
-					"port": "8243",
+					"port": "8280",
 					"path": [
 						"users",
 						"v1",
