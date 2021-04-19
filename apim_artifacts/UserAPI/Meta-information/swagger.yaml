@@ -95,11 +95,11 @@ x-wso2-cors:
    - OPTIONS
 x-wso2-production-endpoints:
   urls:
-   - http://3.19.209.74:8595/api/users
+   - http://localhost:8595/api/users
   type: http
 x-wso2-sandbox-endpoints:
   urls:
-   - http://3.19.209.74:8595/api/users
+   - http://localhost:8595/api/users
   type: http
 x-wso2-basePath: /users/v1
 x-wso2-transports:
